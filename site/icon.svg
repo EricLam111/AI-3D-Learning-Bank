@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="模型博物馆 3D">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="1" stop-color="#04060d"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="0.5" cy="0.46" r="0.52">
+      <stop offset="0" stop-color="#46e0ff" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#46e0ff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="face" x1="0.15" y1="0.05" x2="0.9" y2="0.95">
+      <stop offset="0" stop-color="#a9f6ff"/>
+      <stop offset="0.5" stop-color="#46e0ff"/>
+      <stop offset="1" stop-color="#7c6cff"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="128" height="128" rx="28" fill="url(#bg)"/>
+  <rect x="0.9" y="0.9" width="126.2" height="126.2" rx="27.4" fill="none"
+        stroke="#1c2c48" stroke-width="1.8"/>
+  <circle cx="64" cy="58" r="46" fill="url(#halo)"/>
+
+  <!-- 八面晶体 -->
+  <path d="M64 24 L93 43 L93 79 L64 98 L35 79 L35 43 Z" fill="url(#face)" fill-opacity="0.9"/>
+  <path d="M64 24 L93 43 L64 62 L35 43 Z" fill="#c9f8ff" fill-opacity="0.6"/>
+  <path d="M64 62 L93 43 L93 79 L64 98 Z" fill="#2b86cf" fill-opacity="0.34"/>
+  <path d="M64 24 L93 43 L93 79 L64 98 L35 79 L35 43 Z" fill="none"
+        stroke="#dcf9ff" stroke-opacity="0.8" stroke-width="1.7" stroke-linejoin="round"/>
+  <path d="M64 24 L64 62 L64 98" fill="none" stroke="#dcf9ff" stroke-opacity="0.28" stroke-width="1.2"/>
+  <path d="M35 43 L64 62 L93 43" fill="none" stroke="#dcf9ff" stroke-opacity="0.28" stroke-width="1.2"/>
+</svg>

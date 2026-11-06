@@ -1,0 +1,33 @@
+# Python environments and caches
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.pytest_cache/
+*.egg-info/
+
+# Experiment outputs and local datasets (keep mathbank/data source files)
+**/runs/
+/projects/*/data/
+/datasets/
+*.log
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.safetensors
+
+# Local secrets, editor and OS files
+.env
+.env.*
+!.env.example
+.ipynb_checkpoints/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Machine-specific Ubuntu menu template
+/site/model-museum-3d.desktop
+/site/launch.sh

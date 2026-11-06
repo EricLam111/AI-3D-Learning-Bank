@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>模型博物馆 · 打开计算的内部</title>
+    <link rel="icon" href="icon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hud">
+      <a href="#" id="home" aria-label="返回展厅概览"
+        >◈ 模型博物馆 <span>3D</span></a
+      >
+      <p>不止看外形，打开计算的内部。</p>
+      <span class="demo">离线教具 · 示意数据 / 非真实推理</span>
+    </header>
+    <nav id="chips" class="chips" aria-label="选择模型"></nav>
+    <main class="workspace">
+      <section class="viewer" aria-label="三维计算结构">
+        <div class="view-head">
+          <span id="view-mode">展厅概览 / 11 件展品</span>
+          <div class="camera-controls" aria-label="镜头控制">
+            <button id="zoom-in" aria-label="放大模型" title="放大">＋</button>
+            <button id="zoom-out" aria-label="缩小模型" title="缩小">−</button>
+            <button id="camera" title="恢复默认视角">↺ 视角复位</button>
+          </div>
+        </div>
+        <canvas
+          id="stage"
+          tabindex="0"
+          aria-label="可拖动旋转的三维模型；部件也可使用右侧按钮选取"
+        ></canvas>
+        <div class="overview-intro" id="intro">
+          <span class="kicker">从思想起源出发 · 选择展品开始</span>
+        </div>
+        <div id="labels" class="labels" aria-hidden="true"></div>
+        <div class="view-bottom">
+          <span id="hint">点击晶体或上方模型按钮进入 · 拖动旋转 / 滚轮缩放 / 双指缩放</span>
+          <span>● 当前阶段　<span class="cyan">━ 跨接</span>　◇ 选中部件</span>
+        </div>
+      </section>
+      <aside class="panel" id="panel" aria-label="模型教学说明">
+        <div id="empty" class="empty">
+          <span class="kicker">选择你的第一件展品</span>
+          <h2>同样是 AI，<br />内部大不相同。</h2>
+          <p>
+            推荐顺序：约 1950 年代符号规则 → 1958 感知机 → 1980 年代多层网络与反向传播 → 1980—90 年代卷积与循环网络 → 现代展品。年代与概念均为近似教学划分，不同分支并行发展，并非单一路线。
+          </p>
+          <button id="explore" class="primary">从符号规则开始 →</button>
+          <ol>
+            <li>选择模型，进入独立计算结构</li>
+            <li>播放或单步，观察当前阶段</li>
+            <li>点击部件，查看尺寸与代码</li>
+          </ol>
+        </div>
+        <div id="detail" hidden>
+          <div class="model-heading">
+            <span class="kicker" id="p-tag"></span
+            ><button id="close">返回概览 ↗</button>
+          </div>
+          <h1 id="p-title"></h1>
+          <p id="p-idea" class="idea"></p>
+          <p id="p-formula" class="formula"></p>
+          <section class="part-inspector" aria-label="部件详情">
+            <div class="section-heading">
+              <h2>部件解剖</h2>
+              <span id="selection-note">点击部件深入了解</span>
+            </div>
+            <div id="parts" class="parts"></div>
+            <div id="part-content">
+              <h3 id="part-title"></h3>
+              <p id="part-shape" class="shape"></p>
+              <p id="part-idea"></p>
+              <details id="code-details" open>
+                <summary>
+                  对应代码 <span>简化片段 · 非完整可运行程序</span>
+                </summary>
+                <pre><code id="p-code"></code></pre>
+              </details>
+            </div>
+          </section>
+          <div class="insight">
+            <span>理解检查</span>
+            <p id="p-insight"></p>
+          </div>
+        </div>
+      </aside>
+    </main>
+    <footer class="transport" aria-label="演示播放控制">
+      <div class="phase-caption" aria-live="polite">
+        <span class="kicker" id="phase-count">等待选择模型</span
+        ><strong id="phase-title">先选一件展品，再逐步拆解</strong>
+        <p id="phase-text">所有动画均为教学示意，无需下载模型或连接网络。</p>
+      </div>
+      <div class="playback">
+        <div class="buttons">
+          <button id="run" class="primary" disabled>▶ 继续</button
+          ><button id="step" disabled>单步 →</button
+          ><button id="reset" disabled>重置</button
+          ><label
+            >速度
+            <select id="speed" disabled>
+              <option value="0.5">0.5×</option>
+              <option value="1" selected>1×</option>
+              <option value="2">2×</option>
+            </select></label
+          >
+        </div>
+        <div class="timeline" id="timeline" aria-label="选择演示阶段"></div>
+        <span id="run-state" class="state"
+          >未开始 · 可使用键盘操作部件列表</span
+        >
+      </div>
+    </footer>
+    <div id="loading" class="loading" role="status">正在构建离线 3D 展厅…</div>
+    <script src="vendor/three.min.js"></script>
+    <script src="data.js"></script>
+    <script src="parts.js"></script>
+    <script src="anim.js"></script>
+    <script src="scene.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
